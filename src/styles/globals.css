@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-canvas-bg: #121316;
+    --color-surface: #1a1b20;
+    --color-elevated: #22242b;
+    --color-border-subtle: #2b2d36;
+    --color-border-strong: #3f424e;
+    --color-text-primary: #f1f1f4;
+    --color-text-secondary: #9da1b0;
+    --color-text-muted: #636778;
+    --color-crimson: #e63946;
+    --color-crimson-hover: #ff4d5a;
+    --color-crimson-subtle: rgba(230, 57, 70, 0.12);
+  }
+
+  html {
+    background-color: var(--color-canvas-bg);
+    color: var(--color-text-primary);
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-canvas-bg);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #121316;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2b2d36;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e63946;
+  }
+
+  /* Focus visible accessibility outline */
+  :focus-visible {
+    outline: 2px solid #e63946;
+    outline-offset: 2px;
+  }
+}
+
+/* 3D Orbital Carousel Stage & Preservations */
+.perspective-stage {
+  perspective: 1000px;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+  contain: layout style;
+  overflow: visible;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Reduced motion absolute rule */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
