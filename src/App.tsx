@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { MainLayout } from './layouts/MainLayout';
+import { Preloader } from './components/ui/Preloader';
+import { HeroSection } from './sections/01_HeroSection';
+import { AboutSection } from './sections/02_AboutSection';
+import { WorksSection } from './sections/03_WorksSection';
+import { LeadershipSection } from './sections/04_LeadershipSection';
+import { CredentialsSection } from './sections/05_CredentialsSection';
+import { ContactSection } from './sections/06_ContactSection';
 
 export default function App() {
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
   return (
     <LanguageProvider>
+      {!preloaderDone && <Preloader onComplete={() => setPreloaderDone(true)} />}
       <MainLayout>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <section id="hero" className="py-20 text-center">
-            <h1 className="text-4xl font-display font-black text-text-primary">
-              DEVIS<span className="text-crimson">®</span> CORE FOUNDATION READY
-            </h1>
-            <p className="mt-4 text-text-muted font-mono text-sm">
-              Phase 1 layout, navigation, typography, and bilingual dictionaries verified.
-            </p>
-          </section>
-        </div>
+        <HeroSection />
+        <AboutSection />
+        <WorksSection />
+        <LeadershipSection />
+        <CredentialsSection />
+        <ContactSection />
       </MainLayout>
     </LanguageProvider>
   );
