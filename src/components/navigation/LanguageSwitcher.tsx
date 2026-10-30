@@ -15,25 +15,25 @@ export const LanguageSwitcher: React.FC = () => {
         onClick={() => setLanguage('id')}
         className={`px-2 py-1 rounded-[2px] transition-colors duration-150 ${
           language === 'id'
-            ? 'bg-crimson text-text-primary font-bold shadow-sm'
-            : 'text-text-muted hover:text-text-primary'
+            ? 'bg-crimson text-white font-bold shadow-sm'
+            : 'text-text-secondary hover:text-text-primary'
         }`}
         aria-pressed={language === 'id'}
-        aria-label="Beralih ke Bahasa Indonesia"
+        aria-label="ID - Bahasa Indonesia"
       >
         ID
       </button>
-      <span className="text-border-strong px-0.5">/</span>
+      <span className="text-border-strong px-0.5" aria-hidden="true">/</span>
       <button
         type="button"
         onClick={() => setLanguage('en')}
         className={`px-2 py-1 rounded-[2px] transition-colors duration-150 ${
           language === 'en'
-            ? 'bg-crimson text-text-primary font-bold shadow-sm'
-            : 'text-text-muted hover:text-text-primary'
+            ? 'bg-crimson text-white font-bold shadow-sm'
+            : 'text-text-secondary hover:text-text-primary'
         }`}
         aria-pressed={language === 'en'}
-        aria-label="Switch to English"
+        aria-label="EN - English"
       >
         EN
       </button>

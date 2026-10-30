@@ -5,7 +5,8 @@ import { CertificateModal } from '../components/modals/CertificateModal';
 import { Award, CheckCircle2, Filter } from 'lucide-react';
 
 export const CredentialsSection: React.FC = () => {
-  const { content } = useLanguage();
+  const { content, language } = useLanguage();
+  const isId = language === 'id';
   const [activeFilter, setActiveFilter] = useState<'all' | 'engineering' | 'ai_systems' | 'foundations'>('all');
   const [selectedCert, setSelectedCert] = useState<CertificateItem | null>(null);
 
@@ -49,7 +50,7 @@ export const CredentialsSection: React.FC = () => {
               className={`px-3 py-1.5 rounded-sm transition-colors border ${
                 activeFilter === 'all'
                   ? 'bg-crimson border-crimson text-white font-bold'
-                  : 'bg-surface border-border-subtle text-text-muted hover:text-text-primary'
+                  : 'bg-surface border-border-subtle text-text-secondary hover:text-text-primary'
               }`}
             >
               {content.credentials.filters.all}
@@ -62,7 +63,7 @@ export const CredentialsSection: React.FC = () => {
               className={`px-3 py-1.5 rounded-sm transition-colors border ${
                 activeFilter === 'engineering'
                   ? 'bg-crimson border-crimson text-white font-bold'
-                  : 'bg-surface border-border-subtle text-text-muted hover:text-text-primary'
+                  : 'bg-surface border-border-subtle text-text-secondary hover:text-text-primary'
               }`}
             >
               {content.credentials.filters.engineering}
@@ -75,7 +76,7 @@ export const CredentialsSection: React.FC = () => {
               className={`px-3 py-1.5 rounded-sm transition-colors border ${
                 activeFilter === 'ai_systems'
                   ? 'bg-crimson border-crimson text-white font-bold'
-                  : 'bg-surface border-border-subtle text-text-muted hover:text-text-primary'
+                  : 'bg-surface border-border-subtle text-text-secondary hover:text-text-primary'
               }`}
             >
               {content.credentials.filters.ai_systems}
@@ -88,7 +89,7 @@ export const CredentialsSection: React.FC = () => {
               className={`px-3 py-1.5 rounded-sm transition-colors border ${
                 activeFilter === 'foundations'
                   ? 'bg-crimson border-crimson text-white font-bold'
-                  : 'bg-surface border-border-subtle text-text-muted hover:text-text-primary'
+                  : 'bg-surface border-border-subtle text-text-secondary hover:text-text-primary'
               }`}
             >
               {content.credentials.filters.foundations}
@@ -111,7 +112,6 @@ export const CredentialsSection: React.FC = () => {
                 }
               }}
               className="group cursor-pointer p-6 rounded-sm bg-surface hover:bg-surface-elevated border border-border-subtle hover:border-crimson/50 transition-all duration-300 flex flex-col justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson"
-              aria-label={`Lihat detail sertifikasi: ${cert.title}`}
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

@@ -9,13 +9,30 @@ export const ContactSection: React.FC = () => {
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        throw new Error('Clipboard API unavailable');
+      }
     } catch {
-      // Fallback
-      setCopied(false);
+      // Fallback for non-secure / headless / restricted context
+      const textArea = document.createElement('textarea');
+      textArea.value = email;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+      } catch {
+        // Ignored
+      }
+      textArea.remove();
     }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
   };
 
   const socials = [
@@ -27,14 +44,14 @@ export const ContactSection: React.FC = () => {
     },
     {
       name: 'LinkedIn',
-      handle: 'linkedin.com/in/devis-roomi',
-      url: 'https://www.linkedin.com/in/devis-roomi/',
+      handle: 'linkedin.com/in/abu-devis...',
+      url: 'https://www.linkedin.com/in/abu-devis-jalaluddin-rumi-5475a33b6/',
       icon: <Linkedin className="w-4 h-4" />,
     },
     {
       name: 'Instagram',
       handle: '@adevss_',
-      url: 'https://instagram.com/adevss_',
+      url: 'https://www.instagram.com/adevss_/',
       icon: <Instagram className="w-4 h-4" />,
     },
   ];

@@ -16,7 +16,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       return;
     }
 
-    const duration = 1200; // ms
+    const duration = 650; // ms
     const startTime = performance.now();
 
     const updateCounter = (currentTime: number) => {
@@ -33,7 +33,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
         setIsExiting(true);
         setTimeout(() => {
           onComplete();
-        }, 500);
+        }, 300);
       }
     };
 

@@ -103,14 +103,20 @@ export const RotaryDial: React.FC<RotaryDialProps> = ({
                   e.stopPropagation();
                   onSelectIndex(i);
                 }}
-                className="absolute top-2 w-1.5 h-3 rounded-full transition-all focus:outline-none"
+                className="absolute top-1 p-2 -m-2 min-w-[28px] min-h-[28px] flex items-center justify-center focus:outline-none"
                 style={{
-                  transformOrigin: '50% 80px',
+                  transformOrigin: '50% 84px',
                   transform: `rotate(${tickAngle}deg)`,
-                  backgroundColor: i === activeIndex ? '#e63946' : '#3f424e',
                 }}
                 aria-label={`Pilih proyek 0${i + 1}`}
-              />
+              >
+                <span
+                  className="w-1.5 h-3 rounded-full transition-all"
+                  style={{
+                    backgroundColor: i === activeIndex ? '#e63946' : '#636778',
+                  }}
+                />
+              </button>
             );
           })}
 

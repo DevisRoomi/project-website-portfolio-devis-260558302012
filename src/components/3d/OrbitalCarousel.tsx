@@ -193,6 +193,7 @@ export const OrbitalCarousel: React.FC<OrbitalCarouselProps> = ({
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
                           className="p-1 text-text-muted hover:text-text-primary"
+                          aria-label={`GitHub Repository: ${project.title}`}
                         >
                           <Github className="w-4 h-4" />
                         </a>
@@ -204,6 +205,7 @@ export const OrbitalCarousel: React.FC<OrbitalCarouselProps> = ({
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
                           className="p-1 text-text-muted hover:text-crimson"
+                          aria-label={`Live Demo: ${project.title}`}
                         >
                           <ExternalLink className="w-4 h-4" />
                         </a>
