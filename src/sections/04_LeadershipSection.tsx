@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Calendar, Radio, Award } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export const LeadershipSection: React.FC = () => {
   const { content } = useLanguage();
@@ -36,7 +37,7 @@ export const LeadershipSection: React.FC = () => {
                 {/* Photo Header */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-canvas-bg">
                   <img
-                    src={item.image}
+                    src={getAssetUrl(item.image)}
                     alt={item.role}
                     className="w-full h-full object-cover grayscale contrast-105 group-hover:grayscale-0 transition-all duration-500"
                     loading="lazy"

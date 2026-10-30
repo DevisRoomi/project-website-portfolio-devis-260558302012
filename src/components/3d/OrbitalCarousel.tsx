@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Project } from '../../content/types';
 import { calculateOrbitalTransform, clamp } from '../../animations/orbitalMath';
+import { getAssetUrl } from '../../utils/assets';
 import { RotaryDial } from './RotaryDial';
 import { Layers, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -149,7 +150,7 @@ export const OrbitalCarousel: React.FC<OrbitalCarouselProps> = ({
                   <div>
                     <div className="relative aspect-[16/10] overflow-hidden rounded-[2px] bg-canvas-bg border border-border-subtle mb-4">
                       <img
-                        src={project.image}
+                        src={getAssetUrl(project.image)}
                         alt={project.title}
                         className="w-full h-full object-cover"
                         draggable={false}

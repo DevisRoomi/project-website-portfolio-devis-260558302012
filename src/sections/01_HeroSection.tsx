@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { ArrowDownRight, Compass, Terminal } from 'lucide-react';
 import { initSectionReveal } from '../animations/gsapTimeline';
+import { getAssetUrl } from '../utils/assets';
 
 export const HeroSection: React.FC = () => {
   const { content } = useLanguage();
@@ -90,7 +91,7 @@ export const HeroSection: React.FC = () => {
 
               <div className="w-full h-full overflow-hidden rounded-[2px] bg-canvas-bg relative group">
                 <img
-                  src="/assets/images/devis-portrait.png"
+                  src={getAssetUrl('/assets/images/devis-portrait.png')}
                   alt={`Potret profesional ${content.meta.studentName}`}
                   className="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700 ease-out"
                   loading="eager"

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Project } from '../../content/types';
 import { X, ExternalLink, Github, CheckCircle2, Cpu } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assets';
 
 interface ProjectDrawerProps {
   project: Project | null;
@@ -63,7 +64,7 @@ export const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
           {/* Project Preview */}
           <div className="mt-6 aspect-[16/9] overflow-hidden rounded-sm bg-canvas-bg border border-border-subtle">
             <img
-              src={project.image}
+              src={getAssetUrl(project.image)}
               alt={project.title}
               className="w-full h-full object-cover"
             />

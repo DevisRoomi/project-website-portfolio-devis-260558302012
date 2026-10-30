@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from '../../content/types';
 import { ExternalLink, Github, Layers } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assets';
 
 interface ProjectCardProps {
   project: Project;
@@ -19,7 +20,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div>
         <div className="relative aspect-[16/10] overflow-hidden rounded-[2px] bg-canvas-bg border border-border-subtle mb-5">
           <img
-            src={project.image}
+            src={getAssetUrl(project.image)}
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
