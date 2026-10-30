@@ -1,16 +1,22 @@
 import React from 'react';
+import { LanguageProvider } from './context/LanguageContext';
+import { MainLayout } from './layouts/MainLayout';
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-canvas-bg text-text-primary flex items-center justify-center p-6">
-      <div className="max-w-xl text-center space-y-4">
-        <h1 className="text-4xl font-display font-bold tracking-tight text-text-primary">
-          DEVIS<span className="text-crimson">®</span>
-        </h1>
-        <p className="text-text-secondary text-sm">
-          Teknologi Rekayasa Perangkat Lunak — Politeknik IDN Bogor
-        </p>
-      </div>
-    </main>
+    <LanguageProvider>
+      <MainLayout>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <section id="hero" className="py-20 text-center">
+            <h1 className="text-4xl font-display font-black text-text-primary">
+              DEVIS<span className="text-crimson">®</span> CORE FOUNDATION READY
+            </h1>
+            <p className="mt-4 text-text-muted font-mono text-sm">
+              Phase 1 layout, navigation, typography, and bilingual dictionaries verified.
+            </p>
+          </section>
+        </div>
+      </MainLayout>
+    </LanguageProvider>
   );
 }

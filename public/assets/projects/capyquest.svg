@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgCapy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161922" />
+      <stop offset="100%" stop-color="#121316" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgCapy)" />
+  <g stroke="#2b2d36" stroke-width="1" fill="none">
+    <rect x="80" y="140" width="640" height="240" rx="8" />
+    <line x1="80" y1="190" x2="720" y2="190" />
+    <circle cx="110" cy="165" r="5" fill="#e63946" />
+    <circle cx="130" cy="165" r="5" fill="#9da1b0" />
+    <circle cx="150" cy="165" r="5" fill="#636778" />
+    <!-- Terminal lines -->
+    <line x1="110" y1="230" x2="350" y2="230" stroke="#f1f1f4" stroke-width="2" />
+    <line x1="110" y1="270" x2="480" y2="270" stroke="#9da1b0" stroke-width="1" />
+    <line x1="110" y1="310" x2="280" y2="310" stroke="#e63946" stroke-width="2" />
+    <line x1="110" y1="340" x2="420" y2="340" stroke="#636778" stroke-width="1" />
+  </g>
+  <text x="40" y="70" font-family="'Syne', system-ui, sans-serif" font-size="28" font-weight="800" fill="#f1f1f4">CAPYQUEST</text>
+  <text x="40" y="100" font-family="'JetBrains Mono', monospace" font-size="13" fill="#e63946" letter-spacing="2">GAMIFIED PRODUCTIVITY // MICROSECOND ENGINE</text>
+  <text x="40" y="440" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" fill="#9da1b0">Bun • Hono API • React 19 • bun:sqlite</text>
+  <rect x="620" y="40" width="140" height="32" rx="4" fill="#22242b" stroke="#2b2d36" />
+  <text x="690" y="61" font-family="'JetBrains Mono', monospace" font-size="11" fill="#e63946" text-anchor="middle">LOCAL FIRST</text>
+</svg>
